@@ -5,13 +5,13 @@
 Summary:	Sphinx extension which outputs "serialized" HTML files
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa zapisujące "zserializowane" pliki HTML
 Name:		python3-sphinxcontrib-serializinghtml
-Version:	1.1.4
-Release:	2
+Version:	1.1.5
+Release:	1
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinxcontrib-serializinghtml/
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinxcontrib-serializinghtml/sphinxcontrib-serializinghtml-%{version}.tar.gz
-# Source0-md5:	518ff437dcb05a74ed32ba19c892ce05
+# Source0-md5:	d99d2edc7b26988dc5fa92163857bfbf
 URL:		https://pypi.org/project/sphinxcontrib-serializinghtml/
 BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
@@ -40,6 +40,7 @@ sphinxcontrib-serializinghtml to rozszerzenie Sphinksa, zapisujące
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest tests
 %endif
 
